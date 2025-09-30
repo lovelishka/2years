@@ -4,14 +4,44 @@
     <title>Для моей Паулишки</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body { background-color: grey; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        video { max-width: 100%; max-height: 100vh; }
+        body {
+            /* Красивый розовый градиент для фона */
+            background: radial-gradient(circle, rgba(255,192,203,1) 0%, rgba(255,105,180,1) 100%);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative; /* Для позиционирования текста */
+            font-family: 'Arial', sans-serif; /* Добавим шрифт для красоты */
+        }
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        video {
+            max-width: 100%;
+            max-height: 100vh;
+            z-index: 1; /* Видео будет под текстом */
+        }
+        .overlay-text {
+            position: absolute;
+            color: white;
+            font-size: 4vw; /* Размер шрифта будет адаптироваться под размер экрана */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень для лучшей читаемости */
+            z-index: 2; /* Текст будет над видео */
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <video controls> 
-        <source src="https://drive.google.com/uc?export=download&id=1dgrfcuWvGPMTOw8Fh4xNX0pO__fyU8lO" type="video/mp4">
-        <p style="color: white;">Видео скоро появится! 😉</p>
-    </video>
+    <div class="container">
+        <video controls>
+            <source src="https://drive.google.com/uc?export=download&id=1dgrfcuWvGPMTOw8Fh4xNX0pO__fyU8lO" type="video/mp4">
+            <p style="color: white;">Видео скоро появится! 😉</p>
+        </video>
+    </div>
 </body>
 </html>
